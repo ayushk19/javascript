@@ -1,3 +1,5 @@
+//variables
+
 const account_id = 12345;
 let account_email = "ayu@mail.com"
 var account_password = "123445"
