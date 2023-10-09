@@ -51,10 +51,33 @@ const users = [
 ]
 
 users[1].email
-console.log(travelApp);
+// console.log(travelApp);
 
-console.log(Object.keys(travelApp));
-console.log(Object.values(travelApp));
-console.log(Object.entries(travelApp));
+// console.log(Object.keys(travelApp));
+// console.log(Object.values(travelApp));
+// console.log(Object.entries(travelApp));
 
-console.log(travelApp.hasOwnProperty('isLoggedIn'));
+// console.log(travelApp.hasOwnProperty('isLoggedIn'));
+
+
+const course = {
+    coursename: "JS in hindi",
+    price: "999",
+    courseInstructor: "Ayush"
+}
+
+// course.courseInstructor
+
+const {courseInstructor: instructor} = course
+
+console.log(instructor);
+
+//json format
+// {
+//     "name": "ayush",
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+// ramdomusers api website helps to find random api's
+// use json formator for fomat and beautify data so it became easy for undersand
