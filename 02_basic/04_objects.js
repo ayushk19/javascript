@@ -59,7 +59,8 @@ users[1].email
 
 // console.log(travelApp.hasOwnProperty('isLoggedIn'));
 
-//json
+//json format
+
 const course = {
     coursename: "JS in hindi",
     price: "999",
