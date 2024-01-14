@@ -32,3 +32,5 @@ switch (month) {
         console.log("Default Values Match")
         break;
 }
+
+/* if we remove any break statement from any case then it will print all the case statement after the matching case except "default statement" */
