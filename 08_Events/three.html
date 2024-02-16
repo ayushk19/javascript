@@ -6,11 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ayush Document</h1>
+    <h1>Ayush and Javascript Document</h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
 </body>
 <script>
+
+    let intervalId;
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    const startTime = function(){
+        intervalId = setInterval(sayDate, 1000, 'Hi')
+    }
+
+    const start = document.getElementById('start')
+    const stop = document.getElementById('stop')
+    start.addEventListener('click', startTime )
+    
+    stop.addEventListener('click', function(){
+        clearInterval(intervalId)
+    })
     
 </script>
 </html>
