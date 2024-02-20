@@ -2,7 +2,6 @@
 
 # Solution Code
 ## Project One - Background Color Change
-
 ```Javascript file
 console.log('Background Color Switcher')
 const buttons = document.querySelectorAll('.button')
@@ -54,7 +53,7 @@ form.addEventListener('submit', function(e){
 });
 ```
 
-### Project Three - Digital Clock
+## Project Three - Digital Clock
 ``` Javascript
 const clock = document.querySelector('#clock');
 // const clock = document.getElementById('clock'); // we can use this method also
@@ -66,7 +65,7 @@ setInterval( () => {
 }, 1000)
 ```
 
-### Project Four - Guess The Number
+## Project Four - Guess The Number
 
 ``` Javascript
 let randomNumber = parseInt(Math.random() * 10 + 1);
@@ -158,7 +157,8 @@ function newGame(){
     })
 }
 ```
-### Project Five - Unlimited Colors
+
+## Project Five - Unlimited Colors
 ``` Javascript
 // generate random colours
 
@@ -195,7 +195,7 @@ document.querySelector('#start').addEventListener('click', startColorChange);
 document.querySelector('#stop').addEventListener('click', stopColorChange);
 ```
 
-### Project Six - Keyboard Check
+## Project Six - Keyboard Check
 ``` Javascript
 const insert = document.getElementById('insert')
 
