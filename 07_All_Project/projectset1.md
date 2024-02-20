@@ -53,7 +53,20 @@ form.addEventListener('submit', function(e){
     }
 });
 ```
-## Project Three - Guess The Number
+
+### Project Three - Digital Clock
+``` Javascript
+const clock = document.querySelector('#clock');
+// const clock = document.getElementById('clock'); // we can use this method also
+
+setInterval( () => {
+    let date = new Date();
+    // console.log(date.toLocaleTimeString);
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000)
+```
+
+### Project Four - Guess The Number
 
 ``` Javascript
 let randomNumber = parseInt(Math.random() * 10 + 1);
@@ -144,4 +157,65 @@ function newGame(){
         playGame = true
     })
 }
+```
+### Project Five - Unlimited Colors
+``` Javascript
+// generate random colours
+
+const randomColor = function(){
+    const hex = "0123456789ABCDEF"
+    // #FFFFFF
+    let color = "#"
+    for (let i = 0; i <= 5; i++){
+        color += hex[Math.floor(Math.random() * 16)]
+    }
+    return color;
+};
+
+// console.log(randomColor());
+
+let intervalId;
+
+const startColorChange = function () {
+    if(!intervalId){
+        intervalId = setInterval(changebgcolor, 1000)
+    }
+
+    function changebgcolor(){
+        document.body.style.backgroundColor = randomColor()
+    }
+};
+
+const stopColorChange = function () {
+    clearInterval(intervalId)
+    intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startColorChange);
+document.querySelector('#stop').addEventListener('click', stopColorChange);
+```
+
+### Project Six - Keyboard Check
+``` Javascript
+const insert = document.getElementById('insert')
+
+window.addEventListener('keydown', (e) => {
+    insert.innerHTML = `
+    <div class='color'>
+    <table>
+    <tr>
+      <th>Key</th>
+      <th>Keycode</th> 
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.keyCode}</td> 
+      <td>${e.code}</td>
+    </tr>
+    
+  </table>
+    </div>
+    `
+});
 ```
