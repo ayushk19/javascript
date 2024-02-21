@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #FFFFFF;">
+    <pre>
+Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</pre>
+
+<div id="image">
+    
+</div>
+
+</body>
+<script>
+    let data;
+    const requestUrl = 'https://api.github.com/users/ayushk19';
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    let imagedata = xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4){
+            data = JSON.parse(this.responseText)
+            console.log(data);
+            console.log(data.avatar_url);
+            const insertimage = document.getElementById('image')
+            insertimage.innerHTML = `
+            <img src='${data.avatar_url}' alt="" height="30%" width="30%" style="border-radius: 50px;">
+            <div style="margin-left: 35%; margin-top: -31%">
+            <p> Name: ${data.name}</p>
+            <p> Name: ${data.id}</p>
+            <p> Name: ${data.login}</p>
+            <p> Name: ${data.bio}</p>
+            <div>
+            `
+        }
+        return data
+    }
+    xhr.send()
+    console.log(data);
+</script>
+</html>
