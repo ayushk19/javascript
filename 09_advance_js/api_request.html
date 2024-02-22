@@ -21,11 +21,10 @@ Value	State	Description
 
 </body>
 <script>
-    let data;
     const requestUrl = 'https://api.github.com/users/ayushk19';
     const xhr = new XMLHttpRequest()
     xhr.open('GET', requestUrl)
-    let imagedata = xhr.onreadystatechange = function(){
+    xhr.onreadystatechange = function(){
         console.log(xhr.readyState);
         if (xhr.readyState === 4){
             data = JSON.parse(this.responseText)
@@ -33,8 +32,8 @@ Value	State	Description
             console.log(data.avatar_url);
             const insertimage = document.getElementById('image')
             insertimage.innerHTML = `
-            <img src='${data.avatar_url}' alt="" height="30%" width="30%" style="border-radius: 50px;">
-            <div style="margin-left: 35%; margin-top: -31%">
+            <img src='${data.avatar_url}' alt="" height="10%" width="10%" style="border-radius: 50px;">
+            <div style="margin-left: 12%; margin-top: -11%">
             <p> Name: ${data.name}</p>
             <p> Name: ${data.id}</p>
             <p> Name: ${data.login}</p>
@@ -42,9 +41,7 @@ Value	State	Description
             <div>
             `
         }
-        return data
     }
     xhr.send()
-    console.log(data);
 </script>
 </html>
