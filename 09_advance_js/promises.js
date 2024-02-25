@@ -73,13 +73,22 @@ async function consumePromiseFive(){
 
 consumePromiseFive()
 
-async function getAllUsers(){
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        const data = await response.json()    //is we directly write response.json it takes time so we have to write await keywords
-        console.log(data);
-    } catch (error) {
-        console.log("E: ", error);
-    }
-}
-getAllUsers()
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         const data = await response.json()  //if we directly write response.json it gives error so we have to write await keywords
+//         console.log(data);
+//     } catch (error) {
+//         console.log("E: ", error);
+//     }
+// }
+// getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    return response.json()
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=> console.log(error))
